@@ -3,12 +3,12 @@ type InputPropsType = {
 	setCurrentText: (event: string) => void // НУЖНО ПРОТИПИЗИРОВАТЬ
 };
 
-export const Input = (props: InputPropsType) => {
+export const Input = ({ currentText, setCurrentText, }: InputPropsType) => {
 	const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-		console.log(event.target.value)
+		setCurrentText(event.target.value)
 	};
 
 	return (
-	    <input id={'hw04-input'} type="text" value={props.currentText} onChange={onChangeHandler} />
+	    <input id={'hw04-input'} type="text" value={currentText} onChange={onChangeHandler} />
 	);
 };
